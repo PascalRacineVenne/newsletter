@@ -16,18 +16,6 @@ function App() {
 
   const [check, setCheck] = useState(false);
 
-  const handleNameChange = (e) => {
-    setName(e.target.value)
-  }
-
-  const handleCompanyChange = (e) => {
-    setCompany(e.target.value)
-  }
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value)
-  }
-
   const handleCheckChange = (e) => {
     setCheck(e.target.checked)
   }
@@ -57,19 +45,19 @@ function App() {
           type="text"
           placeholder="enter your name"
           value={name}
-          onChange={handleNameChange}
+          onChange={(e) => setName(e.target.value)}
         />
         <Input
           type="text"
           placeholder="company"
           value={company}
-          onChange={handleCompanyChange}
+          onChange={(e) => setCompany(e.target.value)}
         />
         <Input
           type="text"
           placeholder="email"
           value={email}
-          onChange={handleEmailChange}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <label className="checkbox">
@@ -79,15 +67,17 @@ function App() {
           value={check}
           onChange={handleCheckChange}
         />
-        Do you agree to this subscription?
+        Subscription Agreement
       </label>
 
       <ValidationButton
         onClick={handleSubmit}
       />
-      {nameErr && <p>invalid name</p>}
-      {companyErr && <p>invalid company name</p>}
-      {emailErr && <p>invalid email</p>}
+      <div className="errors">
+        {nameErr && <p>invalid name</p>}
+        {companyErr && <p>invalid company name</p>}
+        {emailErr && <p>invalid email</p>}
+      </div>
     </div>
   )
 }

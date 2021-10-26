@@ -15,19 +15,24 @@ function SubscriptionForm() {
   const [check, setCheck] = useState(false);
 
   const handleSubmit = () => {
+    let formIsValid = true
     if (isEmpty.test(name)) {
       setNameErr(true);
+      formIsValid = false
     }
     if (isEmpty.test(company)) {
       setCompanyErr(true);
+      formIsValid = false
     }
     if (!validEmail.test(email)) {
       setEmailErr(true);
+      formIsValid = false
     }
     // if check is true and 3 previous condition are true then welcome
-    if (check === true) {
+    if (check && formIsValid) {
       console.log('everything works');
     }
+    return formIsValid
   }
 
   const handleClear = () => {
@@ -37,7 +42,6 @@ function SubscriptionForm() {
     setCompanyErr(false)
     setEmail("")
     setEmailErr(false)
-    // checkbox not reseting
     if (check === true) {
       setCheck(false)
     }

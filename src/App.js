@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { validEmail, isEmpty } from './regex.jsx'
 import Input from './input.jsx';
 import ValidationButton from './validation_button.jsx';
+import Welcome from './welcome.jsx'
 
 import './App.css';
 
@@ -16,25 +17,23 @@ function App() {
 
   const [check, setCheck] = useState(false);
 
-  const handleCheckChange = (e) => {
-    setCheck(e.target.checked)
+  const handleCheckChange = () => {
+    setCheck(!check)
   }
 
   const handleSubmit = () => {
     if (isEmpty.test(name)) {
       setNameErr(true);
-    } else {
-      console.log('name ok')
     }
     if (isEmpty.test(company)) {
       setCompanyErr(true);
-    } else {
-      console.log('company ok')
     }
     if (!validEmail.test(email)) {
       setEmailErr(true);
-    } else {
-      console.log('email ok')
+    }
+    // if check is true and 3 previous condition are true then welcome
+    if (check === true) {
+      console.log('everything works');
     }
   }
 

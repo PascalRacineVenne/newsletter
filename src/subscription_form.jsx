@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { validEmail, isEmpty } from './regex.jsx'
 import Input from './input.jsx';
 import Button from './button.jsx';
+import Welcome from './welcome.jsx'
+
+import './subscription_form.css'
 
 function SubscriptionForm() {
   const [name, setName] = useState("");
@@ -29,8 +32,8 @@ function SubscriptionForm() {
       formIsValid = false
     }
     // if check is true and 3 previous condition are true then welcome
-    if (check && formIsValid) {
-      console.log('everything works');
+    if (check === false) {
+      formIsValid = false
     }
     return formIsValid
   }
@@ -47,50 +50,54 @@ function SubscriptionForm() {
     }
   }
   return(
-    <div className="form">
-       <div className="input_field">
-        <Input
-          type="text"
-          placeholder="enter your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <Input
-          type="text"
-          placeholder="company"
-          value={company}
-          onChange={(e) => setCompany(e.target.value)}
-        />
-        <Input
-          type="text"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <label className="checkbox">
-        <Input
-          type="checkbox"
-          placeholder="agreement"
-          checked={check}
-          onChange={() => setCheck(!check)}
-        />
-        Subscription Agreement
-      </label>
-      <div className="btn">
-        <Button
-          name="Sign Up"
-          onClick={handleSubmit}
-        />
-        <Button
-          name="Clear"
-          onClick={handleClear}
-        />
-      </div>
-      <div className="errors">
-        {nameErr && <p>invalid name</p>}
-        {companyErr && <p>invalid company name</p>}
-        {emailErr && <p>invalid email</p>}
+    <div className="container">
+      <div className="form">
+        <div className="input_fields">
+          <Input
+            type="text"
+            placeholder="enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="input_field"
+          />
+          {nameErr && <p className="errors">invalid name</p>}
+          <Input
+            type="text"
+            placeholder="company"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+            className="input_field"
+          />
+          {companyErr && <p className="errors">invalid company name</p>}
+          <Input
+            type="text"
+            placeholder="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="input_field"
+          />
+          {emailErr && <p className="errors">invalid email</p>}
+        </div>
+        <label className="checkbox_label">
+          <Input
+            type="checkbox"
+            placeholder="agreement"
+            checked={check}
+            onChange={() => setCheck(!check)}
+            className="checkbox"
+          />
+          Subscription Agreement
+        </label>
+        <div className="btn">
+          <Button
+            name="Sign Up"
+            onClick={handleSubmit}
+          />
+          <Button
+            name="Clear"
+            onClick={handleClear}
+          />
+        </div>
       </div>
     </div>
   )

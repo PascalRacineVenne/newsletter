@@ -1,17 +1,20 @@
 .footer {
-  background: #F4F4F4;
+  width: 100vw;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  background: white;
+  height: 50px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  border-top: 1px solid #e4e4e4;
 }
 
 .footer a {
-  color: black;
-  opacity: 0.15;
+  color: var(--primary_green);
   text-decoration: none;
-  font-size: 24px;
+  font-size: 18px;
   padding: 0px 10px;
 }

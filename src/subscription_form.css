@@ -1,5 +1,5 @@
 .form {
-  border: 1px solid green;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
   width: 300px;
   margin: 0 64px;
   padding: 4px 8px;
@@ -17,16 +17,33 @@
 }
 
 .input_field {
-  width: 200px;
-  border-radius: 4px;
+  width: 284px;
   border: none;
-  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
-  margin: 20px 0;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  margin: 12px 0;
   padding: 8px 0;
-  border: 1px solid red;
+  border: 1px solid #e4e4e4;
 }
 
 .checkbox {
   border: 1px solid blue;
 }
 
+::-webkit-input-placeholder {
+  color: var(--primary_green);
+  padding: 0 8px;
+}
+
+.errors {
+  height: 30px;
+  width: 284px;
+  display: flex;
+  align-items:  center;
+/*  background-color: #A9333A*/
+}
+.error {
+  font-size: 13px;
+  color: #A9333A;
+  font-weight: bold;
+  padding: 0 8px;
+}

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Button = (props) => {
   const style = {
-    width: '230px',
+    width: '284px',
     height: '30px',
     margin: '4px',
     backgroundColor: 'var(--primary_green)',

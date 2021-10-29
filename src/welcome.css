@@ -14,6 +14,13 @@
   z-index: 1000;
   transform: translateX(0);
   visibility: visible;
+  transition: all 100ms ease-in-out;
+  padding: 8px;
+}
+
+.welcome_active h2 {
+  text-align: center;
+  padding-bottom: 12px;
 }
 
 
@@ -31,7 +38,7 @@
   color: white;
   box-shadow: 4px 4px 15px rgba(0,0,0,0.25);
   z-index: 1000;
-  transform: translateX(100vh);
+  transform: translateX(-100vh);
   visibility: hidden;
   transition: all 100ms ease-in-out;
 }

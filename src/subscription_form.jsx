@@ -11,27 +11,23 @@ function SubscriptionForm() {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
+  const [inputErr, setInputErr] = useState(false);
+  const [check, setCheck] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(false)
 
   // const [nameErr, setNameErr] = useState(false);
   // const [companyErr, setCompanyErr] = useState(false);
-  const [inputErr, setInputErr] = useState(false);
-  const [emailErr, setEmailErr] = useState(false);
+  // const [emailErr, setEmailErr] = useState(false);
 
-  const [check, setCheck] = useState(false);
 
-  const [formIsValid, setFormIsValid] = useState(false)
 
   const handleSubmit = () => {
-    if (isEmpty.test(name) || isEmpty.test(company)) {
+    if (isEmpty.test(name) || isEmpty.test(company) || !validEmail.test(email)) {
       setInputErr(true);
       setFormIsValid(false);
     }
-    if (!validEmail.test(email)) {
-      setEmailErr(true);
-      setFormIsValid(false)
-    }
-    if (check === false) {
-      setFormIsValid(false)
+    if (check === true) {
+      setFormIsValid(true)
     }
     return formIsValid
   }
@@ -41,19 +37,19 @@ function SubscriptionForm() {
     setCompany("")
     setInputErr(false)
     setEmail("")
-    setEmailErr(false)
+    // setEmailErr(false)
     if (check === true) {
       setCheck(false)
     }
-    setFormIsValid(true)
+    setFormIsValid(false)
   }
 
   return(
     <div className="container">
       <div className={formIsValid ? "errors" : "errors_active"}>
       {/*<div className="errors">*/}
-        {inputErr && <p className="error">Invalid input</p>}
-        {emailErr && <p className="error">Invalid email address</p>}
+        {inputErr && <p className="error">There was a problem with your request.</p>}
+        {/*{emailErr && <p className="error">*** Invalid email address</p>}*/}
       </div>
       <div className="form">
         <div className="input_fields">
@@ -80,14 +76,11 @@ function SubscriptionForm() {
           />
         </div>
 
-        <label className="label">
-          <Checkbox
-            placeholder="agreement"
-            checked={check}
-            onChange={() => setCheck(!check)}
-          />
-          Terms and conditions
-        </label>
+        <Checkbox
+          label="I accept the terms and conditions"
+          checked={check}
+          onChange={() => setCheck(!check)}
+        />
 
         <Welcome
           name={name}

@@ -4,11 +4,12 @@ const Button = (props) => {
   const style = {
     width: '284px',
     height: '30px',
-    margin: '4px',
+    margin: '4px 0',
     backgroundColor: 'var(--primary_green)',
     color: 'white',
     fontWeight: 'bold',
     border: 'none',
+    borderRadius:'25px',
   }
 
   return (

@@ -6,7 +6,7 @@ function Welcome(props) {
   return (
     <div className={props.formIsValid ? "welcome_active" : "welcome"}>
       <h2>Welcome {props.name}</h2>
-      <p>Your subscription is activated</p>
+      <p>Glad you've joined us!</p>
     </div>
   )
 }

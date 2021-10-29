@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
 :root {
+  --body-font: 'Roboto', sans-serif;
+  --secondary_font: 'Montserrat', sans-serif;
+  --special-font: 'Kaushan Script', cursive;;
   --primary_green:  #025732;
 }
 
@@ -21,43 +26,23 @@ code {
 }
 
 h1 {
-  font-size: 32px;
-  padding: 0;
-  margin: 0;
-}
-
-h2 {
+  font-family: var(--secondary_font);
   font-size: 28px;
   padding: 0;
   margin: 0;
 }
 
-h3 {
-  font-size: 48px;
-  padding: 0;
-  margin: 0;
-}
-
-h4 {
-  font-size: 32px;
-  padding: 0;
-  margin: 0;
-}
-
-h5 {
+h2 {
+  font-family: var(--special-font);
   font-size: 28px;
   padding: 0;
   margin: 0;
 }
 
 p {
+  font-family:  var(--body-font);
   font-size: 16px;
   padding: 0;
   margin: 0;
 }
 
-label {
-  font-size: 12px;
-  padding: 0;
-  margin: 0;
-}

@@ -8,6 +8,8 @@ function Navbar() {
     position: 'fixed',
     top: '0',
     left: '0',
+    display: 'flex',
+    justifyContent: 'space-around',
     padding: '16px 64px',
     borderBottom: '1px solid #e4e4e4',
   }

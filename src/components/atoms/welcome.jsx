@@ -1,5 +1,5 @@
 import React from 'react'
-import './welcome.css'
+import '../../assets/welcome.css'
 
 function Welcome(props) {
 

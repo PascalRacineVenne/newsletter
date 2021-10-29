@@ -1,5 +1,5 @@
 import React from 'react'
-import MainLogo from './main_logo'
+import MainLogo from './atoms/main_logo'
 
 function Navbar() {
   const style = {

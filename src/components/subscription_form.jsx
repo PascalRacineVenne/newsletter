@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { validEmail, isEmpty } from './regex.jsx'
-import Input from './input.jsx';
-import Button from './button.jsx';
-import Checkbox from './checkbox.jsx'
-import Welcome from './welcome.jsx'
+import { validEmail, isEmpty } from './atoms/regex.jsx'
+import Input from './atoms/input.jsx';
+import Button from './atoms/button.jsx';
+import Checkbox from './atoms/checkbox.jsx'
+import Welcome from './atoms/welcome.jsx'
 
-import './subscription_form.css'
+import '../assets/subscription_form.css'
 
 function SubscriptionForm() {
   const [name, setName] = useState("");
@@ -14,12 +14,6 @@ function SubscriptionForm() {
   const [inputErr, setInputErr] = useState(false);
   const [check, setCheck] = useState(false);
   const [formIsValid, setFormIsValid] = useState(false)
-
-  // const [nameErr, setNameErr] = useState(false);
-  // const [companyErr, setCompanyErr] = useState(false);
-  // const [emailErr, setEmailErr] = useState(false);
-
-
 
   const handleSubmit = () => {
     if (!isEmpty.test(name) && !isEmpty.test(company) && validEmail.test(email) && check === true) {
@@ -32,14 +26,12 @@ function SubscriptionForm() {
     return formIsValid
   }
 
-  const handleClear = () => {
+  const handleClear = (e) => {
     setName("")
     setCompany("")
     setInputErr(false)
     setEmail("")
-    if (check === true) {
-      setCheck(false)
-    }
+    setCheck(false)
     setFormIsValid(false)
   }
 

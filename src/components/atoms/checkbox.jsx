@@ -4,6 +4,7 @@ const Checkbox = ({ label, value, onChange }) => {
   const label_style = {
     display: 'flex',
     alignItems: 'center',
+    fontFamily: 'var(--body-font)',
     fontSize: "13px",
     color: 'rgba(0,0,0,0.4)'
   }

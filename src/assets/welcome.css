@@ -1,3 +1,10 @@
+.welcome {
+  position: fixed;
+  transform: translateX(-100vh);
+  visibility: hidden;
+  transition: all 100ms ease-in-out;
+}
+
 .welcome_active {
   width: 400px;
   height: 200px;
@@ -25,24 +32,4 @@
 
 .welcome_active p {
   padding-top: 4px;
-}
-
-
-.welcome {
-  width: 400px;
-  height: 200px;
-  position: fixed;
-  top: 185px;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--primary_green);
-  color: white;
-  box-shadow: 4px 4px 15px rgba(0,0,0,0.25);
-  z-index: 1000;
-  transform: translateX(-100vh);
-  visibility: hidden;
-  transition: all 100ms ease-in-out;
 }

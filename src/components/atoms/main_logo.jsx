@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './images/logo_maroon.svg';
+import logo from '../../images/logo_maroon.svg';
 
 const MainLogo = () => {
   const style = {

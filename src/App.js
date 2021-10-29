@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from './navbar.jsx'
-import Header from './header.jsx'
-import Footer from './footer.jsx'
-import SubscriptionForm from './subscription_form.jsx'
+import Navbar from './components/navbar.jsx'
+import Header from './components/header.jsx'
+import Footer from './components/footer.jsx'
+import SubscriptionForm from './components/subscription_form.jsx'
 
 import './App.css';
 

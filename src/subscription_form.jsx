@@ -19,53 +19,44 @@ function SubscriptionForm() {
 
   const [check, setCheck] = useState(false);
 
+  const [formIsValid, setFormIsValid] = useState(false)
+
   const handleSubmit = () => {
-    let formIsValid = true
-    // if (isEmpty.test(name)) {
-    //   setNameErr(true);
-    //   formIsValid = false
-    // }
-    // if (isEmpty.test(company)) {
-    //   setCompanyErr(true);
-    //   formIsValid = false
-    // }
     if (isEmpty.test(name) || isEmpty.test(company)) {
       setInputErr(true);
-      formIsValid = false
+      setFormIsValid(false);
     }
-
     if (!validEmail.test(email)) {
       setEmailErr(true);
-      formIsValid = false
+      setFormIsValid(false)
     }
-    // if check is true and 3 previous condition are true then welcome
     if (check === false) {
-      formIsValid = false
+      setFormIsValid(false)
     }
     return formIsValid
   }
 
   const handleClear = () => {
-    // setName("")
-    // setNameErr(false)
-    // setCompany("")
-    // setCompanyErr(false)
+    setName("")
+    setCompany("")
     setInputErr(false)
     setEmail("")
     setEmailErr(false)
     if (check === true) {
       setCheck(false)
     }
+    setFormIsValid(true)
   }
 
   return(
     <div className="container">
+      <div className={formIsValid ? "errors" : "errors_active"}>
+      {/*<div className="errors">*/}
+        {inputErr && <p className="error">Invalid input</p>}
+        {emailErr && <p className="error">Invalid email address</p>}
+      </div>
       <div className="form">
         <div className="input_fields">
-          <div className="errors">
-            {inputErr && <p className="error">Invalid input</p>}
-            {emailErr && <p className="error">Invalid email address</p>}
-          </div>
           <Input
             type="text"
             placeholder="enter your name"
@@ -73,7 +64,6 @@ function SubscriptionForm() {
             onChange={(e) => setName(e.target.value)}
             className="input_field"
           />
-          {/*{nameErr && <p className="errors">invalid value</p>}*/}
           <Input
             type="text"
             placeholder="company"
@@ -81,7 +71,6 @@ function SubscriptionForm() {
             onChange={(e) => setCompany(e.target.value)}
             className="input_field"
           />
-          {/*{companyErr && <p className="errors">invalid company name</p>}*/}
           <Input
             type="text"
             placeholder="email"
@@ -100,16 +89,10 @@ function SubscriptionForm() {
           Terms and conditions
         </label>
 
-{/*        <label className="checkbox_label">
-          <Input
-            type="checkbox"
-            placeholder="agreement"
-            checked={check}
-            onChange={() => setCheck(!check)}
-            className="checkbox"
-          />
-          Subscription Agreement
-        </label>*/}
+        <Welcome
+          name={name}
+          formIsValid={formIsValid}
+        />
 
         <div className="btn">
           <Button

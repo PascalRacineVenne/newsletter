@@ -9,7 +9,7 @@
 
 .input_fields {
   width:  300px;
-  margin: 8px auto;
+  margin: 0 auto;
   padding: 4px 0;
   display: flex;
   flex-direction: column;
@@ -27,6 +27,7 @@
 
 .checkbox {
   border: 1px solid blue;
+  margin: 8px;
 }
 
 ::-webkit-input-placeholder {
@@ -36,14 +37,25 @@
 
 .errors {
   height: 30px;
-  width: 284px;
+  width: 300px;
   display: flex;
   align-items:  center;
-/*  background-color: #A9333A*/
+  margin: 8px 64px;
+  padding: 4px 8px;
+}
+
+.errors_active {
+  height: 30px;
+  width: 300px;
+  display: flex;
+  align-items:  center;
+  margin: 8px 64px;
+  padding: 4px 8px;
+  background-color: #A9333A
 }
 .error {
   font-size: 13px;
-  color: #A9333A;
+  color: white;
   font-weight: bold;
   padding: 0 8px;
 }

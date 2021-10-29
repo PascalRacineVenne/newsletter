@@ -22,12 +22,11 @@ function SubscriptionForm() {
 
 
   const handleSubmit = () => {
-    if (isEmpty.test(name) || isEmpty.test(company) || !validEmail.test(email)) {
+    if (!isEmpty.test(name) || !isEmpty.test(company) || validEmail.test(email) || check) {
+      setFormIsValid(true);
+    } else {
       setInputErr(true);
       setFormIsValid(false);
-    }
-    if (check === true) {
-      setFormIsValid(true)
     }
     return formIsValid
   }
@@ -37,7 +36,6 @@ function SubscriptionForm() {
     setCompany("")
     setInputErr(false)
     setEmail("")
-    // setEmailErr(false)
     if (check === true) {
       setCheck(false)
     }

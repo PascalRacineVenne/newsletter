@@ -2,7 +2,6 @@ import React from 'react'
 import '../../assets/welcome.css'
 
 function Welcome(props) {
-
   return (
     <div className={props.formIsValid ? "welcome_active" : "welcome"}>
       <h2>Welcome</h2>

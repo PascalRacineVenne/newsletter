@@ -26,6 +26,11 @@
   border-radius: 25px;
 }
 
+.input_field[type="text"] {
+  color: var(--primary_green);
+  font-family: var(--secondary_font);
+}
+
 .input_field:focus {
   outline: none;
 }
@@ -38,6 +43,7 @@
 ::-webkit-input-placeholder {
   color: var(--primary_green);
   font-family: var(--secondary_font);
+  opacity: 0.5;
 }
 
 .errors {
@@ -53,6 +59,7 @@
   height: 30px;
   width: 300px;
   display: flex;
+  justify-content: center;
   align-items:  center;
   margin: 8px 64px;
   padding: 4px 8px;

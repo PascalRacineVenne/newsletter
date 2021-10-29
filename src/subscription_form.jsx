@@ -77,7 +77,7 @@ function SubscriptionForm() {
         </div>
 
         <Checkbox
-          label="I accept the terms and conditions"
+          label="I agree to subscribe this newsletter"
           checked={check}
           onChange={() => setCheck(!check)}
         />

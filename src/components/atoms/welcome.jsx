@@ -7,6 +7,7 @@ function Welcome(props) {
       <h2>Welcome</h2>
       <h2>{props.name}</h2>
       <p>Glad you've joined us!</p>
+      <button id='close'>close</button>
     </div>
   )
 }

@@ -33,3 +33,42 @@
 .welcome_active p {
   padding-top: 4px;
 }
+
+#close {
+  overflow: hidden;
+  position: relative;
+  border: none;
+  padding: 0;
+  width: 2em; height: 2em;
+  border-radius: 50%;
+  background: transparent;
+  color: #1da1f2;
+  font: inherit;
+  text-indent: 100%;
+  cursor: pointer;
+}
+
+#close::focus {
+  outline: solid 0 red;
+  box-shadow: 0 0 0 2px #8ed0f9;
+}
+
+#close::hover {
+  background: rgba(29, 161, 142, .1);
+}
+
+#close::before, #close::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: calc(50% - .0625em);
+    width: .125em;
+    height: 70%;
+    border-radius: .125em;
+    transform: rotate(45deg);
+    background: currentcolor;
+}
+
+#close::after {
+  transform: rotate(-45deg);
+}

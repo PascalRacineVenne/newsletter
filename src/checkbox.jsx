@@ -5,7 +5,7 @@ const Checkbox = ({ label, value, onChange }) => {
     display: 'flex',
     alignItems: 'center',
     fontSize: "13px",
-    color: 'rgba(0,0,0,0.6)'
+    color: 'rgba(0,0,0,0.4)'
   }
 
   const checkbox = {

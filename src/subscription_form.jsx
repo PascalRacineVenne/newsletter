@@ -22,12 +22,13 @@ function SubscriptionForm() {
 
 
   const handleSubmit = () => {
-    if (!isEmpty.test(name) || !isEmpty.test(company) || validEmail.test(email) || check) {
+    if (!isEmpty.test(name) && !isEmpty.test(company) && validEmail.test(email) && check === true) {
       setFormIsValid(true);
     } else {
       setInputErr(true);
       setFormIsValid(false);
     }
+    console.log(formIsValid);
     return formIsValid
   }
 
@@ -45,9 +46,7 @@ function SubscriptionForm() {
   return(
     <div className="container">
       <div className={formIsValid ? "errors" : "errors_active"}>
-      {/*<div className="errors">*/}
         {inputErr && <p className="error">There was a problem with your request.</p>}
-        {/*{emailErr && <p className="error">*** Invalid email address</p>}*/}
       </div>
       <div className="form">
         <div className="input_fields">

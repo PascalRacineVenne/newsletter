@@ -6,6 +6,7 @@ const Button = (props) => {
     height: '30px',
     margin: '4px 0',
     backgroundColor: 'var(--primary_green)',
+    fontFamily: 'var(--secondary_font)',
     color: 'white',
     fontWeight: 'bold',
     border: 'none',

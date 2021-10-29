@@ -2,7 +2,7 @@ import React from 'react'
 
 function Header() {
   const style = {
-    margin: '54px auto 16px',
+    margin: '148px auto 16px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',

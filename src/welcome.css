@@ -2,7 +2,7 @@
   width: 400px;
   height: 200px;
   position: fixed;
-  top: 185px;
+  top: 335px;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,11 @@
 
 .welcome_active h2 {
   text-align: center;
-  padding-bottom: 12px;
+  padding: 12px auto;
+}
+
+.welcome_active p {
+  padding-top: 4px;
 }
 
 

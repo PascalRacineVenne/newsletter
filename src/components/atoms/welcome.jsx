@@ -4,7 +4,6 @@ import '../../assets/welcome.css'
 function Welcome(props) {
   const handleClick = (e) => {
     e.preventDefault()
-    console.log(e)
   }
 
   return (

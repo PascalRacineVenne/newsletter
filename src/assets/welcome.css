@@ -1,11 +1,4 @@
 .welcome {
-  position: fixed;
-  transform: translateX(-100vh);
-  visibility: hidden;
-  transition: all 100ms ease-in-out;
-}
-
-.welcome_active {
   width: 400px;
   height: 200px;
   position: fixed;
@@ -15,14 +8,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary_green);
   color: white;
+  padding: 8px;
   box-shadow: 4px 4px 15px rgba(0,0,0,0.25);
   z-index: 1000;
+  background-color: var(--primary_green);
+  transform: translateX(-100vh);
+  visibility: hidden;
+  transition: all 200ms ease-in-out;
+}
+
+.welcome_active {
   transform: translateX(0);
   visibility: visible;
-  transition: all 100ms ease-in-out;
-  padding: 8px;
+  transition: all 200ms ease-in-out;
 }
 
 .welcome_active h2 {
@@ -36,39 +35,37 @@
 
 #close {
   overflow: hidden;
-  position: relative;
-  border: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 1px solid #fff;
   padding: 0;
-  width: 2em; height: 2em;
+  width: 1.5em; height: 1.5em;
   border-radius: 50%;
   background: transparent;
-  color: #1da1f2;
+  color: #fff;
   font: inherit;
   text-indent: 100%;
   cursor: pointer;
 }
 
-#close::focus {
-  outline: solid 0 red;
-  box-shadow: 0 0 0 2px #8ed0f9;
+#close:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #fff;
 }
 
-#close::hover {
-  background: rgba(29, 161, 142, .1);
+#close:before, #close:after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: calc(50% - .0625em);
+  width: .125em;
+  height: 70%;
+  border-radius: .125em;
+  transform: rotate(45deg);
+  background: currentcolor;
 }
 
-#close::before, #close::after {
-    content: '';
-    position: absolute;
-    top: 15%;
-    left: calc(50% - .0625em);
-    width: .125em;
-    height: 70%;
-    border-radius: .125em;
-    transform: rotate(45deg);
-    background: currentcolor;
-}
-
-#close::after {
+#close:after {
   transform: rotate(-45deg);
 }

@@ -22,11 +22,11 @@ function SubscriptionForm() {
       setInputErr(true);
       setFormIsValid(false);
     }
-    console.log(formIsValid);
     return formIsValid
   }
 
   const handleClear = (e) => {
+    e.preventDefault();
     setName("")
     setCompany("")
     setInputErr(false)
@@ -68,12 +68,14 @@ function SubscriptionForm() {
         <Checkbox
           label="I agree to subscribe this newsletter"
           checked={check}
+          setCheck={setCheck}
           onChange={() => setCheck(!check)}
         />
 
         <Welcome
           name={name}
           formIsValid={formIsValid}
+          setFormIsValid= {setFormIsValid}
         />
 
         <div className="btn">

@@ -1,11 +1,4 @@
 .welcome {
-  position: fixed;
-  transform: translateX(-100vh);
-  visibility: hidden;
-  transition: all 100ms ease-in-out;
-}
-
-.welcome_active {
   width: 400px;
   height: 200px;
   position: fixed;
@@ -15,14 +8,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary_green);
   color: white;
+  padding: 8px;
   box-shadow: 4px 4px 15px rgba(0,0,0,0.25);
   z-index: 1000;
+  background-color: var(--primary_green);
+  transform: translateX(-100vh);
+  visibility: hidden;
+  transition: all 200ms ease-in-out;
+}
+
+.welcome_active {
   transform: translateX(0);
   visibility: visible;
-  transition: all 100ms ease-in-out;
-  padding: 8px;
+  transition: all 200ms ease-in-out;
 }
 
 .welcome_active h2 {
@@ -32,4 +31,41 @@
 
 .welcome_active p {
   padding-top: 4px;
+}
+
+#close {
+  overflow: hidden;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 1px solid #fff;
+  padding: 0;
+  width: 1.5em; height: 1.5em;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  text-indent: 100%;
+  cursor: pointer;
+}
+
+#close:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+#close:before, #close:after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: calc(50% - .0625em);
+  width: .125em;
+  height: 70%;
+  border-radius: .125em;
+  transform: rotate(45deg);
+  background: currentcolor;
+}
+
+#close:after {
+  transform: rotate(-45deg);
 }

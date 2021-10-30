@@ -15,7 +15,11 @@ const Button = (props) => {
 
   return (
     <div>
-      <button onClick={props.onClick} style={style}>{props.name}</button>
+      <button
+        onClick={props.onClick}
+        style={style}>
+        {props.name}
+      </button>
     </div>
   )
 }

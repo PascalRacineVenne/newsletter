@@ -26,7 +26,6 @@ function SubscriptionForm() {
   }
 
   const handleClear = () => {
-    // e.preventDefault();
     setName("")
     setCompany("")
     setInputErr(false)

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = (props) => {
+const Button = ( {name, onClick}) => {
   const style = {
     width: '284px',
     height: '30px',
@@ -16,9 +16,9 @@ const Button = (props) => {
   return (
     <div>
       <button
-        onClick={props.onClick}
+        onClick={onClick}
         style={style}>
-        {props.name}
+        {name}
       </button>
     </div>
   )

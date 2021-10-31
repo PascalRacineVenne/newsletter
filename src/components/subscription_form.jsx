@@ -25,8 +25,7 @@ function SubscriptionForm() {
     return formIsValid
   }
 
-  const handleClear = (e) => {
-    e.preventDefault();
+  const handleClear = () => {
     setName("")
     setCompany("")
     setInputErr(false)
@@ -38,7 +37,7 @@ function SubscriptionForm() {
   return(
     <div className="container">
       <div className={formIsValid ? "errors" : "errors_active"}>
-        {inputErr && <p className="error">There was a problem with your request.</p>}
+        {inputErr && <p className="error">Please enter valid informations.</p>}
       </div>
       <div className="form">
         <div className="input_fields">
@@ -67,8 +66,7 @@ function SubscriptionForm() {
 
         <Checkbox
           label="I agree to subscribe this newsletter"
-          checked={check}
-          setCheck={setCheck}
+          value={check}
           onChange={() => setCheck(!check)}
         />
 

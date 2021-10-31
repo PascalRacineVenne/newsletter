@@ -6,7 +6,9 @@ const MainLogo = () => {
     paddingTop: '4px',
   }
   return (
-    <a href="https://pascalracinevenne.herokuapp.com/" target="_blank" rel="noreferrer">
+    <a href="https://pascalracinevenne.herokuapp.com/"
+      target="_blank"
+      rel="noreferrer">
       <img src={logo} alt="Logo" style={style} />
     </a>
   )

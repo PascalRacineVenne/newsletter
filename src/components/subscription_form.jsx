@@ -37,7 +37,7 @@ function SubscriptionForm() {
   return(
     <div className="container">
       <div className={formIsValid ? "errors" : "errors_active"}>
-        {inputErr && <p className="error">Please enter valid informations.</p>}
+        {inputErr && <p className="error">Name, company name or email invalid.</p>}
       </div>
       <div className="form">
         <div className="input_fields">
@@ -50,14 +50,14 @@ function SubscriptionForm() {
           />
           <Input
             type="text"
-            placeholder="company"
+            placeholder="enter company name"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
             className="input_field"
           />
           <Input
             type="text"
-            placeholder="email"
+            placeholder="you@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="input_field"
@@ -65,7 +65,7 @@ function SubscriptionForm() {
         </div>
 
         <Checkbox
-          label="I agree to subscribe this newsletter"
+          label="Subscription Agreement"
           value={check}
           onChange={() => setCheck(!check)}
         />

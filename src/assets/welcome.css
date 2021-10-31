@@ -2,7 +2,7 @@
   width: 400px;
   height: 200px;
   position: fixed;
-  top: 335px;
+  top: 300px;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@
 }
 
 .welcome_active p {
-  padding-top: 4px;
+  padding-top: 8px;
 }
 
 #close {
